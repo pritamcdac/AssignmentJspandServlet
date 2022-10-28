@@ -1,0 +1,5 @@
+create table users (user_id int auto_increment primary key , user_name varchar(50) , email varchar(50) , password varchar(50) );
+
+create table movie (movie_id int auto_increment primary key , movie_name varchar(50) , movie_type varchar(50) , movie_release_date datetime(6));
+
+create table rating_and_comment(id int auto_increment primary key , movie_rating float , comment varchar(50) , movie_id int , user_id int , foreign key(movie_id) references movie(movie_id) on delete cascade on update cascade , foreign key(user_id) references user(user_id) on delete cascade on update cascade);
